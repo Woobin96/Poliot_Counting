@@ -155,8 +155,12 @@ function getTodayFileName() {
   const year = today.getFullYear();         // 연도 (예: 2025)
   const month = String(today.getMonth() + 1).padStart(2, '0'); // 월 (0부터 시작이라 +1)
   const date = String(today.getDate()).padStart(2, '0');       // 일
+  const hours = String(today.getHours()).padStart(2, '0');      // 시
+  const minutes = String(today.getMinutes()).padStart(2, '0');  // 분
+  const seconds = String(today.getSeconds()).padStart(2, '0');  // 초
 
-  return `ToDay_Counting_${year}-${month}-${date}.txt`;
+  return `ToDay_Counting_${year}-${month}-${date}_${hours}-${minutes}-${seconds}.txt`;
+  // return `ToDay_Counting_${year}-${month}-${date}.txt`;
 }
 
 export default App;
