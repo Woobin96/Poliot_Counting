@@ -83,6 +83,7 @@ function App() {
     const content =
       `Full TC: ${count}\n` +
       `Result: ${Resultcount}\n` +
+      `Task: ${Taskcount}\n` +
       `VOC: ${VoCcount}\n` +
       `TC_Update: ${TC_Updatecount}`;
 
