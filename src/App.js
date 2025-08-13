@@ -55,6 +55,19 @@ function App() {
     console.log(`TC Update 감소: ${newCount}`);
   };
 
+  // Task
+  const [Taskcount, TasksetCount] = useState(0);
+  const TaskHandleIncrease = () => {
+    const newCount = Taskcount + 1;
+    TasksetCount(newCount);
+    console.log(`Task 증가: ${newCount}`);
+  };
+  const TaskHandleIncrease2 = () => {
+    const newCount = Taskcount > 0 ? Taskcount - 1 : 0;
+    TasksetCount(newCount);
+    console.log(`Task 감소: ${newCount}`);
+  };
+
   // Reset
   const handleReset = () => {
     console.log("전체 초기화!");
@@ -62,6 +75,7 @@ function App() {
     ResultsetCount(0);
     VoCsetCount(0);
     TC_UpdatesetCount(0);
+    TasksetCount(0);
   };
 
   // 저장 버튼
@@ -96,6 +110,15 @@ function App() {
           <button onClick={FullTcHandleIncrease} style={{ marginRight: "1rem" }}> + </button>
           <span style={{ marginRight: "1rem" }}>{count}</span>
           <button onClick={FullTchandleIncrease2} style={{ marginRight: "1rem" }}> - </button>
+        </div>
+      </div>
+
+      <div className="App2">
+        <div className="App3">
+          <h3 style={{ marginRight: "1rem" }}>{STRINGS.TASK}</h3>
+          <button onClick={TaskHandleIncrease} style={{ marginRight: "1rem" }}> + </button>
+          <span style={{ marginRight: "1rem" }}>{Taskcount}</span>
+          <button onClick={TaskHandleIncrease2} style={{ marginRight: "1rem" }}> - </button>
         </div>
       </div>
 
